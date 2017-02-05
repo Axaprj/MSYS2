@@ -4,22 +4,23 @@ GCC on Windows
 
 ## msys32
 - installation
+```sh
     inst-msys-i686.sh
-    
+```    
 - add to .bash_profile
-
+```sh
     export MINGW_CHOST="i686-w64-mingw32"
     export MINGW_PREFIX="mingw32"
     PATH="${PATH}:/${MINGW_PREFIX}/bin"
-
+```
 ## msys64
 - installation
-    
+```sh    
     inst-msys-x86_64.sh 
-
+```
 - add to .bash_profile
-
+```sh
     export MINGW_CHOST="x86_64-w64-mingw32"
     export MINGW_PREFIX="mingw64"
     PATH="${PATH}:/${MINGW_PREFIX}/bin"
-
+```
