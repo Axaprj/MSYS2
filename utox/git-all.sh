@@ -1,8 +1,14 @@
 #!/bin/bash
 
+git clone https://github.com/irungentoo/filter_audio
+cd filter_audio
+git checkout tags/v0.0.1
+cd ..
+
+
 git clone git://github.com/uTox/uTox.git
 cd uTox
-git checkout tags/v0.12.1
+git checkout tags/v0.12.2
 cd ..
 
 
@@ -30,12 +36,14 @@ cd ..
  
 git clone git://github.com/TokTok/c-toxcore.git
 cd c-toxcore
-git checkout tags/v0.1.2
+git checkout tags/v0.1.6 
 cd ..
 
-git clone https://github.com/kcat/openal-soft
+git clone https://github.com/irungentoo/openal-soft-tox
+mv openal-soft-tox openal-soft
+#git clone https://github.com/kcat/openal-soft
 cd openal-soft
-git checkout tags/openal-soft-1.17.2
+#git checkout tags/openal-soft-1.17.2
 cd ..
 
 
@@ -44,7 +52,3 @@ cd check
 git checkout tags/0.10.0
 cd ..
 
-#git clone git://github.com/irungentoo/filter_audio.git
-#cd filter_audio
-#git checkout tags/v0.0.1
-#cd ..
