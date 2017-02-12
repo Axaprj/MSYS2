@@ -8,5 +8,5 @@
 * `tox-compile.sh` - Tox and uTox build
 * `utox-compile.sh` -  uTox build (CMake based)
 * `old-utox-compile.sh` - (obsoleted) shell based uTox build
-* `filter-audio.make' - filter-audio make file; remove msys build special rules
+* `filter-audio.make` - filter-audio make file; remove msys build special rules
 
