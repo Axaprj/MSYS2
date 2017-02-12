@@ -19,6 +19,16 @@ make
 make install
 cd ..
 
+#exit
+
+pwd
+echo "*****filter_audio"
+cd filter_audio 
+make install -f ../filter-audio.make 
+cd ..
+
+#exit
+
 pwd
 echo "*****openal-soft "
 cd openal-soft
@@ -42,6 +52,8 @@ cmake -G "MSYS Makefiles" \
 make
 make install
 cd ../..
+
+#exit
 
 pwd
 echo "*****uTox"
