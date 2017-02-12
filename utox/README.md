@@ -10,3 +10,6 @@
 * `old-utox-compile.sh` - (obsoleted) shell based uTox build
 * `filter-audio.make` - filter-audio make file; remove msys build special rules
 
+## see also
+* in case of `-lopenal` issue
+https://github.com/uTox/uTox/pull/731
