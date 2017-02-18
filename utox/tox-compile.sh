@@ -51,6 +51,8 @@ cmake -G "MSYS Makefiles" \
 
 make
 make install
+# for names compatibility
+ln -s /usr/lib/libOpenAL32.a /usr/lib/libopenal.a
 cd ../..
 
 #exit
