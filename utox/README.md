@@ -9,6 +9,7 @@
 * `utox-compile.sh` -  uTox build (CMake based)
 * `old-utox-compile.sh` - (obsoleted) shell based uTox build
 * `filter-audio.make` - filter-audio make file; remove msys build special rules
+* `utox-codeblocks.sh` - uTox generate CodeBlocks project (for CodeBlocks with MSYS2 toolchain)
 
 ## see also
 * in case of `-lopenal` issue
