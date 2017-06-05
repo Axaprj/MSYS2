@@ -36,7 +36,7 @@ cd ..
  
 git clone git://github.com/TokTok/c-toxcore.git
 cd c-toxcore
-git checkout tags/v0.1.6 
+git checkout tags/v0.1.8
 cd ..
 
 git clone https://github.com/irungentoo/openal-soft-tox
