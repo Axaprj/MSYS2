@@ -8,7 +8,7 @@ cd ..
 
 git clone git://github.com/uTox/uTox.git
 cd uTox
-git checkout tags/v0.13.1
+git checkout tags/v0.15.0
 cd ..
 
 
