@@ -6,15 +6,15 @@ git checkout tags/v0.0.1
 cd ..
 
 
-git clone git://github.com/uTox/uTox.git
+git clone --recursive git://github.com/uTox/uTox.git
 cd uTox
-git checkout tags/v0.15.0
+git checkout tags/v0.17.0
 cd ..
 
 
 git clone https://git.xiph.org/opus.git
 cd opus
-git checkout tags/v1.1.2
+git checkout tags/v1.2.1
 cd ..
 
 
@@ -31,22 +31,24 @@ cd ..
 
 git clone git://github.com/jedisct1/libsodium.git
 cd libsodium
-git checkout tags/1.0.3
+git checkout tags/1.0.16
 cd ..
  
-git clone git://github.com/TokTok/c-toxcore.git
+git clone --recursive git://github.com/TokTok/c-toxcore.git
 cd c-toxcore
-git checkout tags/v0.1.8
+git checkout tags/v0.2.2
 cd ..
 
-git clone https://github.com/irungentoo/openal-soft-tox
-mv openal-soft-tox openal-soft
-#git clone https://github.com/kcat/openal-soft
+#git clone https://github.com/irungentoo/openal-soft-tox
+#mv openal-soft-tox openal-soft
+#cd openal-soft
+#cd ..
+
+git clone https://github.com/kcat/openal-soft
 cd openal-soft
-#git checkout tags/openal-soft-1.17.2
+#git checkout tags/openal-soft-1.18.2
 cd ..
-
-
+ 
 git clone https://github.com/libcheck/check
 cd check
 git checkout tags/0.10.0
