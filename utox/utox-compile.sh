@@ -20,15 +20,20 @@ cd build
 #echo $PKG_CONFIG_PATH
 #cmake --help > ./../../cmake.txt
 export CFLAGS="-I/usr/include -I/usr/local/include"
-export LDFLAGS="-L/usr/lib -L/usr/local/lib"
-export LD_LIBRARY_PATH="/usr/lib"
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig"
+export LDFLAGS="-static -L/usr/lib -L/usr/local/lib $LDFLAGS"
+#export LD_LIBRARY_PATH="/usr/lib"
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+#export PKG_CONFIG_PATH="/usr/lib/pkgconfig"
 #export LIBS='-lOpenAL32 -liphlpapi'
+#cmake -DCMAKE_TOOLCHAIN_FILE="../cmake/toolchain-win64.cmake" -DTOXCORE_STATIC=ON ..
+#make
 cmake -G "MSYS Makefiles" \
-	-DCMAKE_BUILD_TYPE=Release \
-	-DUTOX_STATIC=True \
-	-DFILTER_AUDIO=True \
-	-DTOXCORE_STATIC=False \
-	-DCMAKE_TOOLCHAIN_FILE=./../../utox-toolchain-$MINGW_PREFIX.cmake  \
-    ..
+	-DCMAKE_BUILD_TYPE:STRING=Release \
+	-DCMAKE_TOOLCHAIN_FILE="../cmake/win.cmake" -DTOXCORE_STATIC=ON ..
+#cmake -G "MSYS Makefiles" \
+#	-DCMAKE_BUILD_TYPE=Release \
+#	-DFILTER_AUDIO=ON \
+#	-DTOXCORE_STATIC=ON \
+#	-DCMAKE_TOOLCHAIN_FILE=./../../utox-toolchain-$MINGW_PREFIX.cmake  \
+#    ..
 make

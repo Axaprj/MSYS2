@@ -15,12 +15,13 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/pkgconfig:/usr/local/lib/pkgco
 #export CFLAGS=-isystem\ /usr/include
 export CFLAGS="-I/usr/include $CFLAGS"
 export CXXFLAGS="-I/usr/include $CXXFLAGS"
-export LDFLAGS="-L/usr/lib $LDFLAGS"
+export LDFLAGS="-static -L/usr/lib $LDFLAGS"
 
 cmake 	-G "MSYS Makefiles" \
 	-DENABLE_STATIC=ON \
 	-DENABLE_SHARED=OFF \
 	-DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	-DCMAKE_BUILD_TYPE:STRING=Release \
 	..
 
 make
