@@ -26,7 +26,7 @@ cd ..
 
 git clone https://chromium.googlesource.com/webm/libvpx
 cd libvpx
-git checkout tags/v1.6.1
+git checkout tags/v1.7.0
 cd ..
 
 git clone git://github.com/jedisct1/libsodium.git

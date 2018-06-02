@@ -1,54 +1,54 @@
 #!/bin/bash
+#echo "$PATH"
 
-git clone https://github.com/irungentoo/filter_audio
-cd filter_audio
-git checkout tags/v0.0.1
-cd ..
-
-
-git clone --recursive git://github.com/uTox/uTox.git
-cd uTox
-git checkout tags/v0.17.0
-cd ..
-
-
-git clone https://git.xiph.org/opus.git
-cd opus
-git checkout tags/v1.2.1
-cd ..
-
-
-git clone git://github.com/yasm/yasm.git
+echo "*****yasm"
 cd yasm
-git checkout tags/v1.3.0
+./autogen.sh
+./configure
+make
+make check
+make install
+make clean
 cd ..
 
-
-git clone https://chromium.googlesource.com/webm/libvpx
+echo "*****libvpx"
 cd libvpx
-git checkout tags/v1.6.1
+./configure
+make
+make install
 cd ..
 
-git clone git://github.com/jedisct1/libsodium.git
+echo "*****opus"
+cd opus
+./autogen.sh
+./configure
+make
+make install
+cd ..
+
+echo "*****libsodium"
 cd libsodium
-git checkout tags/1.0.16
-cd ..
- 
-git clone git://github.com/TokTok/c-toxcore.git
-cd c-toxcore
-git checkout tags/v0.2.2
-cd ..
-
-git clone https://github.com/irungentoo/openal-soft-tox
-mv openal-soft-tox openal-soft
-#git clone https://github.com/kcat/openal-soft
-cd openal-soft
-#git checkout tags/openal-soft-1.17.2
+./autogen.sh
+if [ "$MINGW_PREFIX" == "mingw64" ]; then
+./dist-build/msys2-win64.sh
+else
+./dist-build/msys2-win32.sh
+fi
+#./autogen.sh
+#./configure 
+#make check
+#make 
+#make install
 cd ..
 
-
-git clone https://github.com/libcheck/check
+echo "*****check"
 cd check
-git checkout tags/0.10.0
+autoreconf -if
+./configure   
+#--disable-subunit
+make
+make check
+make install
 cd ..
 
+echo "*****DONE"
