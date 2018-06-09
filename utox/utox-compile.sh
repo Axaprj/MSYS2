@@ -27,16 +27,19 @@ export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:$PKG_CONFIG_
 #export LIBS='-lOpenAL32 -liphlpapi'
 #cmake -DCMAKE_TOOLCHAIN_FILE="../cmake/toolchain-win64.cmake" -DTOXCORE_STATIC=ON ..
 #make
-# --trace-expand 
-mv /usr/lib/libopus.dll.a /usr/lib/libopus.dll.a.bak 
-mv /usr/lib/libsodium.dll.a /usr/lib/libsodium.dll.a.bak
-cp /$MINGW_PREFIX/bin/libwinpthread-1.dll .
+# --trace-expand -DCMAKE_VERBOSE_MAKEFILE=ON \
+#	mv /usr/lib/libopus.dll.a /usr/lib/libopus.dll.a.bak 
+#	mv /usr/lib/libsodium.dll.a /usr/lib/libsodium.dll.a.bak
+#	cp /$MINGW_PREFIX/bin/libwinpthread-1.dll .
+
 cmake -G "MSYS Makefiles" \
 	-DCMAKE_BUILD_TYPE:STRING=Release \
 	-DCMAKE_EXE_LINKER_FLAGS="-static -L/usr/lib -L/usr/local/lib" \
 	-DCMAKE_TOOLCHAIN_FILE="../cmake/win.cmake" \
 	-DTOXCORE_STATIC=ON \
 	-DUTOX_STATIC=ON \
+	-DCMAKE_LINK_SEARCH_END_STATIC=ON \
+	-DCMAKE_LINK_SEARCH_START_STATIC=ON \
 	..
 #-DCMAKE_TOOLCHAIN_FILE="../cmake/win.cmake" \
 #cmake -G "MSYS Makefiles" \

@@ -4,7 +4,7 @@
 **see also [Installing GCC & MSYS2](https://github.com/orlp/dev-on-windows/wiki/Installing-GCC--&-MSYS2)**
 
 ## msys32
-- installation script
+- toolchain installation/update script
 ```sh
     inst-msys-i686.sh
 ```    
@@ -15,7 +15,7 @@
     PATH="${PATH}:/${MINGW_PREFIX}/bin"
 ```
 ## msys64
-- installation script
+- toolchain installation/update script
 ```sh    
     inst-msys-x86_64.sh 
 ```

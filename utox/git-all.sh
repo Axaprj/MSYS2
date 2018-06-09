@@ -43,9 +43,9 @@ cd ..
 #mv openal-soft-tox openal-soft
 #cd openal-soft
 #cd ..
-
 git clone https://github.com/kcat/openal-soft
 cd openal-soft
+# 1.18.2 windows build bug Unknown arguments: -D_WIN32_WINNT=0x0502
 #git checkout tags/openal-soft-1.18.2
 cd ..
  
